@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/appastron/buggout/issues"
   },
-  "homepage": "https://github.com/appastron/buggout#readme"
+  "homepage": "https://github.com/appastron/buggout#readme",
+  "dependencies": {
+    "node": "^10.6.0"
+  }
 }
