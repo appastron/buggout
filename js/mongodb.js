@@ -57,3 +57,12 @@ const findDocuments = function(db, callback) {
     callback(docs);
   });
 }
+
+
+function NoCallsMade() {
+
+
+}
+
+NoCallsMade();
+
