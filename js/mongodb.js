@@ -7,7 +7,7 @@ var assert = require('assert');
 //Mongo Atlas Server URL Connection String
 var url = process.env.MONGODB_CLOUD_URL;
 console.log("URL:", url)
-url = HTMLEncoder.htmlEncode(url);
+//url = HTMLEncoder.htmlEncode(url);
 //console.log("URL Value: ", url);
 
 var localMongo = process.env.MONGODB_LOCAL_URL;
@@ -15,7 +15,7 @@ console.log("Local Mongo URL: ", localMongo);
 
 const dbName = "debug";
 
-MongoClient.connect(localMongo, function(err, db) {
+MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   console.log("Database connection successful!");
 
@@ -57,3 +57,12 @@ const findDocuments = function(db, callback) {
     callback(docs);
   });
 }
+
+
+function NoCallsMade() {
+
+
+}
+
+NoCallsMade();
+
