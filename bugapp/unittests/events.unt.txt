@@ -1,0 +1,8 @@
+curl -i -X POST -H "Content-Type: application/json" -d '{ "event_id":100000,"event_name":"TEST_EVENT_CURL","event_type": "TEST_EVENT","event_message": "EventCreateMethod", "event_start_time": Date.now, "event_end_time": Date.now, "event_elapsed_time": 100    }' localhost:3000/events
+
+curl -i -X POST -H "Content-Type: application/json" -d '{ "event_id":100000,"event_name":"TEST_EVENT_CURL","event_type": "TEST_EVENT"}' localhost:3000/events
+  event_type: String,
+  event_message: String,
+  event_start_time: { type: Date, default: Date.now },
+  event_end_time: { type: Date, default: Date.now },
+  event_elapsed_time: Number
