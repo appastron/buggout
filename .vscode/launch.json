@@ -7,6 +7,13 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "BugApp Program",
+            "program": "${workspaceFolder}/bugapp/bin/www",
+            "cwd": "${workspaceFolder}\\bugapp\\"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch Mongo Test",
             "program": "${workspaceFolder}/js/mongodb.js",
             "cwd": "${workspaceFolder}\\js\\"
@@ -25,5 +32,7 @@
             "cwd": "${workspaceFolder}\\js\\"
 
         }
+
+
     ]
 }
