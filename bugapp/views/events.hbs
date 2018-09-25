@@ -1,0 +1,47 @@
+  <div class="container">
+
+    <form id="eventform" acton="/" method="POST">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" class="form-control" id="Name" >
+            <small id="help" class="form-text text-muted">Name</small>
+        </div>
+        <div class="form-group">
+            <label for="Type">Event Type: </label>
+            <input type="text" class="form-control" id="Type" >
+            <small id="help" class="form-text text-muted">Type</small>
+        </div>
+        <div class="form-group">
+            <label for="Message">Message: </label>
+            <input type="text" class="form-control" id="Message" >
+            <small id="help" class="form-text text-muted">Your Message</small>
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+  
+   <div class="col-md-6 text-center" class="task">
+            <div class="row">
+                <ul id="uneaten">
+
+                    {{#each events}} 
+                    <li id="event">
+                        {{!-- <b>Name:</b> {{event_name}}    <b>Type:</b> {{event_type}}    <b>Message:</b> {{event_message}}  <b>Start Time:</b> {{event_start_time}}    <b>End Time:</b> {{event_end_time}}    <b>Elapsed Time:</b> {{event_elapsed_time}} <br> <br>                      --}}
+                        <br>
+                        <b>Name:</b> {{event_name}}    <br>
+                        <b>Type:</b> {{event_type}}    <br>
+                        <b>Message:</b> {{event_message}}  <br>
+                        <b>Start Time:</b> {{event_start_time}} <br>   
+                        <b>End Time:</b> {{event_end_time}}    <br>
+                        <b>Elapsed Time:</b> {{event_elapsed_time}} <br> 
+                        {{!-- <br>  --}}
+                        <hr>
+                        
+                    </li>
+                     {{/each}}
+                </ul>
+            </div>
+        </div>

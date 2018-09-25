@@ -5,8 +5,12 @@ var Events = require('../models/events.js');
 
 router.get('/', function(req, res, next) {
     Events.find(function (err, eventEntries) {
+      var eventsList = {
+        events: eventEntries
+      };
       if (err) return next(err);
-      res.json(eventEntries);
+      // res.json(eventEntries);
+      res.render("events", eventsList);
     });
   });
   
@@ -20,9 +24,26 @@ router.get('/', function(req, res, next) {
   
   /* SAVE PRODUCT */
   router.post('/', function(req, res, next) {
-    Events.create(req.body, function (err, post) {
+    var eventName = req.query.Name
+    var eventType = req.query.Type
+    var eventMessage = req.query.Message
+    var eventJson = {
+      event_name: eventName,
+      event_type: eventType,
+      event_message: eventMessage
+    };
+
+    Events.create(eventJson, function (err, post) {
       if (err) return next(err);
-      res.json(post);
+      // res.json(post);
+      Events.find(function (err, eventEntries) {
+        var eventsList = {
+          events: eventEntries
+        };
+        if (err) return next(err);
+        // res.json(eventEntries);
+        res.render("events", eventsList);
+      });
     });
   });
   
