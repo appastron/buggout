@@ -24,26 +24,25 @@ router.get('/', function(req, res, next) {
   
   /* SAVE PRODUCT */
   router.post('/', function(req, res, next) {
-    var eventName = req.query.Name
-    var eventType = req.query.Type
-    var eventMessage = req.query.Message
-    var eventJson = {
-      event_name: eventName,
-      event_type: eventType,
-      event_message: eventMessage
-    };
 
-    Events.create(eventJson, function (err, post) {
+    var eventJSON = req.body; //JSON.parse(req);
+
+    Events.create(eventJSON, function (err, post) {
       if (err) return next(err);
       // res.json(post);
-      Events.find(function (err, eventEntries) {
-        var eventsList = {
-          events: eventEntries
-        };
-        if (err) return next(err);
-        // res.json(eventEntries);
-        res.render("events", eventsList);
-      });
+
+      res.status(200).end();
+
+      //Having this code did nothing on the render of the response
+      // Events.find(function (err, eventEntries) {
+      //   var eventsList = {
+      //     events: eventEntries
+      //   };
+      //   if (err) return next(err);
+      //   // res.json(eventEntries);
+      //   res.render("events", eventsList);
+      //});
+
     });
   });
   
