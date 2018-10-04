@@ -67,7 +67,7 @@
                 var Name = $("#Name").val();
                 var Type = $("#Type").val();
                 var Message = $("#Message").val();
-
+//***** add a BROWSER DEV TOOLS break point on var formDataJSON to verify the above values are set properly 
                 var formDataJSON = {
                     "event_id": 0,
                     "event_name": Name,
@@ -80,12 +80,12 @@
                 //console.log("Name: ", Name, " Type: ", Type, "Message: ", Message);
 
 
-
+//***** add a BROWSER DEV TOOLS break point on the AJAX post call
                 $.ajax("/events/", {
                     type: "POST",
                     data: formDataJSON
                 }).then( function() {
-
+//***** add a BROWSER DEV TOOLS break point on .reload for the page reloading 
                     location.reload();
                 });
             }
